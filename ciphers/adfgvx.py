@@ -17,7 +17,7 @@ d={'q':'AA','w':'AD','e':'AF','r':'AG','t':'AV','y':'AX','u':'DA',
    'i':'DD','p':'DF','a':'DG','s':'DX','d':'FA','f':'FD','g':'FF',
    'h':'FG','j':'FV','k':'FX','l':'GA','1':'GD','2':'GF','3':'GG',
    '4':'GV','5':'GX','7':'VA','8':'VD','6':'VF','9':'VG','0':'VV',
-   'z'='VX','x':'XA','c':'XD','v':'XF','b':'XG','n':'XV','m':'XX'}
+   'z':'VX','x':'XA','c':'XD','v':'XF','b':'XG','n':'XV','m':'XX'}
 
 x=list()
 def cifrar(s):
