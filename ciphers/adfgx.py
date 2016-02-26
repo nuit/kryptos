@@ -19,7 +19,7 @@ d={'a':'AA','b':'AD','c':'AF','d':'AG','e':'AX',
    'v':'XA','w':'XD','x':'XF','y':'XG','z':'XX'}
 
 x=list()
-def cifrar(s):
+def cipher(s):
   for i in s:
     for j in d:
       if i.upper():
@@ -29,7 +29,7 @@ def cifrar(s):
   k=''.join(x)
   sys.stdout.write(k+'\n') 
   
-def decifrar(c):
+def decipher(c):
   x=[c[n:n+2] for n in range(0,len(c),2)]
   for i in x:
     for k,v in d.items():
@@ -39,9 +39,9 @@ def decifrar(c):
 
 for arg in sys.argv:
   if arg == '-c':
-    s=raw_input('texto: ')
-    cifrar(s)
+    s=raw_input('>> text: ')
+    cipher(s)
 
   if arg == '-d':
-    c=raw_input('cifra: ')
-    decifrar(c)
+    c=raw_input('>> cipher: ')
+    decipher(c)
