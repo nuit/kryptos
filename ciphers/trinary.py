@@ -1,32 +1,39 @@
+# -*- encoding: utf-8 -*-
+# trinary cipher
+# by: nuit
 from collections import OrderedDict
 import sys
 
 d=OrderedDict()
-d={'a':'001','b':'002','c':'010','d':'011','e':'012','f':'020','g':'021',
-   'h':'022','i':'100','j':'101','k':'102','l':'110','m':'111','n':'112',
-   'o':'120','p':'121','q':'122','r':'200','s':'201','t':'202','u':'210',
-   'v':'211','w':'212','x':'220','y':'221','z':'222', ' ':'000'}
+d={'a':'.⋅....⋅','b':'.⋅....˙','c':'.⋅...⋅.','d':'.⋅...⋅⋅','e':'.⋅...⋅˙','f':'.⋅...˙.','g':'.⋅...˙⋅',
+   'h':'.⋅...˙˙','i':'.⋅..⋅..','j':'.⋅..⋅.⋅','k':'.⋅..⋅.˙','l':'.⋅..⋅⋅.','m':'.⋅..⋅⋅⋅','n':'.⋅..⋅⋅˙',
+   'o':'.⋅..⋅˙.','p':'.⋅..⋅˙⋅','q':'.⋅..⋅˙˙','r':'.⋅..˙..','s':'.⋅..˙.⋅','t':'.⋅..˙.˙','u':'.⋅..˙⋅.',
+   'v':'.⋅..˙⋅⋅','w':'.⋅..˙⋅˙','x':'.⋅..˙˙.','y':'.⋅..˙˙⋅','z':'.⋅..˙˙˙','0':'.......','1':'......⋅',
+   'A':'.˙....⋅','B':'.˙....˙','C':'.˙...⋅.','D':'.˙...⋅⋅','E':'.˙...⋅˙','F':'.˙...˙.','G':'.˙...˙⋅',
+   'H':'.˙...˙˙','I':'.˙..⋅..','J':'.˙..⋅.⋅','K':'.˙..⋅.˙','L':'.˙..⋅⋅.','M':'.˙..⋅⋅⋅','N':'.˙..⋅⋅˙',
+   'O':'.˙..⋅˙.','P':'.˙..⋅˙⋅','Q':'.˙..⋅˙˙','R':'.˙..˙..','S':'.˙..˙.⋅','T':'.˙..˙.˙','U':'.˙..˙⋅.',
+   'V':'.˙..˙⋅⋅','W':'.˙..˙⋅˙','X':'.˙..˙˙.','Y':'.˙..˙˙⋅','Z':'.˙..˙˙˙','\n':'.⋅.⋅..⋅',' ':'.⋅.⋅...'}
 
-def cifrar(s):
-	for i in s:
-		for x,y in d.items():
-			if i==x:
-				sys.stdout.write(y),
-	sys.stdout.write('\n')
+def szyfr(s):
+  for i in s:
+    for x,y in d.items():
+      if i==x:
+        print d[i],
 
-def decifrar(c):
-	w=[c[n:n+3] for n in range(0,len(c),3)]
-	for i in w:
-	  for x,y in d.items():
-	    if i==y:
-			sys.stdout.write(x)    
-	sys.stdout.write('\n')
+def decipher(c):
+  print '\n[+] Plain Text:'
+  for i in c:
+    for x,y in d.items():
+      if i.encode('utf8', 'replace')==y:
+	      sys.stdout.write(x),
+  sys.stdout.write('\n\n')
+  
 
 for arg in sys.argv:
   if arg == '-c':
-    s=raw_input('texto: ')
-    cifrar(s)
+    s=raw_input('>> text: ')
+    szyfr(s)
 
   if arg == '-d':
-    c=raw_input('cifra: ')
-    decifrar(c)
+    c=unicode(raw_input('>> cipher: '), 'utf8').split()
+    decipher(c)
