@@ -1,23 +1,25 @@
-# ADFGVX Cipher
+# Fritz Nebel's Cipher
 # by: nuit 
 #
-#  A D F G V X
-#A N A 1 C 3 H 
-#D 8 T B 2 O M
-#F E 5 W R P D
-#G 4 F 6 G 7 I
-#V 9 J 0 K L Q
-#X S U V X Y Z
+#   A D F G V X
+# A g f 6 a z e
+# D 4 c t 5 i 7
+# F y 3 h 2 q v
+# G l r u d o 1
+# V k m x s 9 w
+# X p 8 j 0 b n
+
 
 from collections import OrderedDict
 import sys
 
 d=OrderedDict()
-d={'q':'AA','w':'AD','e':'AF','r':'AG','t':'AV','y':'AX','u':'DA',
-   'i':'DD','p':'DF','a':'DG','s':'DX','d':'FA','f':'FD','g':'FF',
-   'h':'FG','j':'FV','k':'FX','l':'GA','1':'GD','2':'GF','3':'GG',
-   '4':'GV','5':'GX','7':'VA','8':'VD','6':'VF','9':'VG','0':'VV',
-   'z':'VX','x':'XA','c':'XD','v':'XF','b':'XG','n':'XV','m':'XX'}
+d={'a':'GA','b':'VX','c':'DD','d':'GG','e':'XA','f':'DA','g':'AA',
+   'h':'FF','i':'VD','j':'FX','k':'AV','l':'AG','m':'DV','n':'XX',
+   'o':'VG','p':'AX','q':'VF','r':'DG','s':'GV','t':'FD','u':'FG',
+   'v':'XF','w':'XV','x':'FV','y':'AF','z':'VA','0':'GX','1':'XG',
+   '2':'GF','3':'DF','4':'AD','5':'GD','6':'FA','7':'XD','8':'DX',
+   '9':'VV'}
 
 x=list()
 def cipher(s):
