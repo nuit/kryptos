@@ -1,11 +1,5 @@
 # Sir Francis Bacon Cipher
 # by: nuit
-#
-# Troca cada letra do texto plano pelas letras do alfabeto baconiano.
-# Depois adiciona-se a chave de mesmo tamanho e troca-se:
-# b=Maiusculas, a=minusculas.
-#
-
 
 from collections import OrderedDict
 import sys
@@ -19,7 +13,7 @@ d={'a':'aaaaa','b':'aaaab','c':'aaaba','d':'aaabb','e':'aabaa',
    'z':'babbb'}
 
 x=list()
-def cifrar(s):
+def cipher(s):
   for i in s:
     for j in d:
       if i.isupper():
@@ -29,7 +23,7 @@ def cifrar(s):
   k=''.join(x)
   sys.stdout.write(k+'\n')      
 
-def decifrar(c):
+def decipher(c):
   x=[c[n:n+5] for n in range(0,len(c),5)]
   for i in x:
     for k,v in d.items():
@@ -39,9 +33,9 @@ def decifrar(c):
 
 for arg in sys.argv:
   if arg == '-c':
-    s=raw_input('texto: ')
-    cifrar(s)
+    s=raw_input('>> Text: ')
+    cipher(s)
 
   if arg == '-d':
-    c=raw_input('cifra: ')
-    decifrar(c)
+    c=raw_input('>> Cipher: ')
+    decipher(c)
