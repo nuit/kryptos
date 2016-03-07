@@ -25,7 +25,6 @@ def cipher(s,f):
         n.append(len(m[i]))
   if f=='c': 
     print B+'\n[+] MorseCode:'+ENDC,' '.join(l)
-    print 'n:',n
     hack(l,n,f='c')
   else: 
     print B+'\n[+] Mutilated:'+ENDC,' '.join(l)
