@@ -4,8 +4,6 @@
 #
 # Emocipher - Random Emoji Keyed Caesar
 # by: nuit
-
-
 from collections import OrderedDict
 import random
 import sys
@@ -19,8 +17,7 @@ ENDC='\033[0m'
 demo={'a':'😈','b':'😀','c':'😎','d':'😱','e':'⚤','f':'╋','g':'🔫','h':'ᐁ','i':'😃',
       'j':'😘','k':'🌠','l':'🃏','m':'🐙','n':'🐲','o':'💀','p':'💣','q':'😌','r':'🐻',
       's':'⬛','t':'👻','u':'🚬','v':'🐍','w':'🔒','x':'💉','y':'🐰','z':'👽'}
-
-
+      
 d=OrderedDict()
 def keyed_alpha(kw):
   global d
@@ -46,10 +43,8 @@ def rot(kw,k,s):
         x=i+k 
         y=x%26
         lv.append(ndemo[y])  
-        
   for i in lv:
     print demo[i],
-
 
 ld=[]
 def tor(kw,k,s):
@@ -61,13 +56,11 @@ def tor(kw,k,s):
         x=i-int(k)
         y=x%26
         ld.append(ndemo[y])
-
   plaintext=[]
   for i in ld:
     for x,y in demo.items():
       if i==y:
         plaintext.append(x)
-    
   print G+'\n[+] TEXT:',''.join(plaintext),'\n'+ENDC
 
 kw=raw_input('>> Keyword: ').lower()
